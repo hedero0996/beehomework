@@ -22,7 +22,8 @@ static double tan(double a);
 static double pow(double a, double b);
 static double sqrt(double a);
 static double log(double a,double b);
-static double factorial(int a);
+static int factorial(int a);
+static void calculate();
 };
 
 #endif

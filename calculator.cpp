@@ -63,7 +63,7 @@ return std::log(a)/std ::log(b);
 
 
 }
-double calculator :: factorial(int a){
+int calculator :: factorial(int a){
     if(a<0){
         cerr<<"Error: Factorial of negative number!"<<endl;
         exit(EXIT_FAILURE);
@@ -79,4 +79,77 @@ r*=i;
 }
 return r;
 }
+}
+void calculator :: calculate(){
+    cout<<"Welcome to the calculator!"<<endl;
+   double number1, number2;
+   char possible_operations[] = {'+', '-', '*', '/', '%', 's', 'c', 't', 'p', 'q', 'l', 'f'};
+   char chosen_operation;
+   cout<<"Enter first number: ";
+   cin>>number1;
+   cout<<"Enter valid operation like +,-,/,*,%,s(sin),c(cos),t(tan),p(pow),q(sqrt),l(log),!(factorial): \n";
+cin>>chosen_operation;
+
+for(char op : possible_operations){
+    
+      
+        switch(chosen_operation){
+            case '+':
+              cout<<"Enter second number: ";
+        cin>>number2;
+                cout<<"Result: "<<calculator::add(number1, number2)<<endl;
+                break;
+            case '-':
+              cout<<"Enter second number: ";
+        cin>>number2;
+                cout<<"Result: "<<calculator::subtract(number1, number2)<<endl;
+                break;
+            case '*':
+              cout<<"Enter second number: ";
+        cin>>number2;
+                cout<<"Result: "<<calculator::multiply(number1, number2)<<endl;
+                break;
+            case '/':
+              cout<<"Enter second number: ";
+        cin>>number2;
+                cout<<"Result: "<<calculator::divide(number1, number2)<<endl;
+                break;
+            case '%':
+              cout<<"Enter second number: ";
+        cin>>number2;
+                cout<<"Result: "<<calculator::mod(number1, number2)<<endl;
+                
+                break;
+            case 's':
+                cout<<"Result: "<<calculator::sin(number1)<<endl;
+                break;
+            case 'c':
+                cout<<"Result: "<<calculator::cos(number1)<<endl;
+                break;
+            case 't':
+                cout<<"Result: "<<calculator::tan(number1)<<endl;
+                break;
+            case 'p':
+              cout<<"Enter second number: ";
+        cin>>number2;
+                cout<<"Result: "<<calculator::pow(number1, number2)<<endl;
+                break;
+            case 'q':
+                cout<<"Result: "<<calculator::sqrt(number1)<<endl;
+                break;
+            case 'l':
+              cout<<"Enter second number: ";
+        cin>>number2;
+                cout<<"Result: "<<calculator::log(number1, number2)<<endl;
+                break;
+               case '!':
+                cout<<"Result: "<<calculator::factorial(static_cast<int>(number1))<<endl;
+                break;
+                default:
+                cerr<<"Error invalid operation!\n";
+                exit(EXIT_FAILURE);
+        }
+        return;
+    }
+
 }
