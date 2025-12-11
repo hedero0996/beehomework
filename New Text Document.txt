@@ -1,3 +1,0 @@
-to compile multi files in c++ we use in cmd
-g++ *.cpp -o output
-output
